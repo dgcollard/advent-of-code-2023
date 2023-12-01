@@ -12,7 +12,7 @@ export function part1(lines: Input): number {
   const calibrationValues = lines.map((line) => {
     const chars = line.split("");
     const firstDigit = chars.find(isDigit);
-    const lastDigit = chars.reverse().find(isDigit);
+    const lastDigit = chars.findLast(isDigit);
     return Number(`${firstDigit}${lastDigit}`);
   });
 
@@ -53,7 +53,7 @@ export function part2(lines: Input): number {
   const calibrationValues = lines.map((line) => {
     const chars = replaceDigitWords(line).split("");
     const firstDigit = chars.find(isDigit);
-    const lastDigit = chars.reverse().find(isDigit);
+    const lastDigit = chars.findLast(isDigit);
     return Number(`${firstDigit}${lastDigit}`);
   });
 
