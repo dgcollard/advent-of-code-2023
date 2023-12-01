@@ -78,3 +78,14 @@ export function reverse(str: string): string {
   }
   return newStr;
 }
+
+export function trim(strs: TemplateStringsArray) {
+  return strs
+    .flatMap((s) =>
+      s
+        .trim()
+        .split(`\n`)
+        .map((t) => t.trim())
+    )
+    .join("\n");
+}
