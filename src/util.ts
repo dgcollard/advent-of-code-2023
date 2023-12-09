@@ -71,6 +71,15 @@ export function product(numbers: number[]): number {
   return numbers.reduce(multiply, 1);
 }
 
+export function gcd(a: number, b: number): number {
+  if (!b) return a;
+  return gcd(b, a % b);
+}
+
+export function lcm(a: number, b: number): number {
+  return (a * b) / gcd(a, b);
+}
+
 export function reverse(str: string): string {
   let newStr = "";
   for (let i = str.length - 1; i >= 0; i--) {
