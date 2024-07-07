@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
 import { parseInputFile, part1, part2 } from "./day-1";
-import { trim } from "./util";
+import { trim } from "../util";
 
 test("parseInputFile", () => {
   expect(

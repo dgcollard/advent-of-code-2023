@@ -1,4 +1,4 @@
-import { fetchInputFile, product, runSolution, sum } from "./util";
+import { fetchInputFile, product, runSolution, sum } from "../util";
 
 type Input = string[][];
 

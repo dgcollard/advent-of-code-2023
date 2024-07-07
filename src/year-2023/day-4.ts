@@ -1,5 +1,5 @@
 import invariant from "tiny-invariant";
-import { fetchInputFile, runSolution, sum } from "./util";
+import { fetchInputFile, runSolution, sum } from "../util";
 
 type Input = { winners: number[]; picks: number[] }[];
 

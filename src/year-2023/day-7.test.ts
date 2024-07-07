@@ -7,7 +7,7 @@ import {
   part1,
   part2,
 } from "./day-7";
-import { trim } from "./util";
+import { trim } from "../util";
 
 const hands: Input = [
   ["32T3K", 765],

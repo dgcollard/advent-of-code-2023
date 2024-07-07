@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
 import { Input, parseInputFile, part1, part2 } from "./day-9";
-import { trim } from "./util";
+import { trim } from "../util";
 
 const map: Input = [
   [0, 3, 6, 9, 12, 15],

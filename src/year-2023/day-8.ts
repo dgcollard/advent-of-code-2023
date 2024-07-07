@@ -1,4 +1,4 @@
-import { fetchInputFile, lcm, product, runSolution, sum } from "./util";
+import { fetchInputFile, lcm, product, runSolution, sum } from "../util";
 
 export type Input = {
   stepsOrder: string[];

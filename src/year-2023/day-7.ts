@@ -1,5 +1,5 @@
 import invariant from "tiny-invariant";
-import { fetchInputFile, product, runSolution, sum } from "./util";
+import { fetchInputFile, product, runSolution, sum } from "../util";
 
 export type Input = [string, number][];
 

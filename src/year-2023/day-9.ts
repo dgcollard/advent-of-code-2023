@@ -1,4 +1,4 @@
-import { fetchInputFile, runSolution, sum } from "./util";
+import { fetchInputFile, runSolution, sum } from "../util";
 
 export type Input = number[][];
 
