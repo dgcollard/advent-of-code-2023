@@ -21,7 +21,7 @@ export function part1(histories: Input): number {
 			diffs.push(pairDiffs);
 		} while (pairDiffs.some((x) => x !== 0));
 
-		return sum(diffs.map((diff) => diff.at(-1)!));
+		return sum(diffs.map((diff) => diff.at(-1) as number));
 	});
 
 	return sum(extrapolatedValues);
@@ -36,7 +36,9 @@ export function part2(histories: Input): number {
 			diffs.push(pairDiffs);
 		} while (pairDiffs.some((x) => x !== 0));
 
-		return diffs.toReversed().reduce((res, diff) => diff.at(0)! - res, 0);
+		return diffs
+			.toReversed()
+			.reduce((res, diff) => (diff.at(0) as number) - res, 0);
 	});
 
 	return sum(extrapolatedValues);

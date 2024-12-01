@@ -25,8 +25,8 @@ export function parseInputFile(inputFile: string): Input {
 			};
 		};
 
-		const gameId = match![1];
-		const turns = match![2].split("; ").map(parseTurn);
+		const gameId = match?.[1];
+		const turns = match?.[2].split("; ").map(parseTurn);
 
 		return [gameId, turns];
 	};
@@ -37,9 +37,9 @@ export function parseInputFile(inputFile: string): Input {
 }
 
 export function part1(games: Input): number {
-	const maxRed = 12,
-		maxGreen = 13,
-		maxBlue = 14;
+	const maxRed = 12;
+	const maxGreen = 13;
+	const maxBlue = 14;
 
 	const possibleGameIds = Object.entries(games)
 		.filter(([, turns]) =>

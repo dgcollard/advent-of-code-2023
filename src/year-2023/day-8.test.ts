@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
-import { Input, parseInputFile, part1, part2 } from "./day-8";
 import { trim } from "../util";
+import { type Input, parseInputFile, part1, part2 } from "./day-8";
 
 const map: Input = {
 	stepsOrder: ["R", "L"],

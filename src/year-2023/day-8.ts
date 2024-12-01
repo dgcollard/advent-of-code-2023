@@ -15,8 +15,8 @@ export function parseInputFile(inputFile: string): Input {
 			const match = line.match(/(?<from>\w+) = \((?<l>\w+), (?<r>\w+)\)/);
 
 			return [
-				match!.groups!.from,
-				{ l: match!.groups!.l, r: match!.groups!.r },
+				match?.groups?.from,
+				{ l: match?.groups?.l, r: match?.groups?.r },
 			];
 		}),
 	);
@@ -40,8 +40,7 @@ export function part1({ stepsOrder, stepsMap }: Input): number {
 }
 
 export function part2({ stepsOrder, stepsMap }: Input): number {
-	let i = 0;
-	let positions = Object.entries(stepsMap)
+	const positions = Object.entries(stepsMap)
 		.filter(([pos]) => pos.charAt(2) === "A")
 		.map(([pos]) => pos);
 

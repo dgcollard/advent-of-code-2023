@@ -1,5 +1,5 @@
 import "dotenv/config";
-import fs from "fs";
+import fs from "node:fs";
 import invariant from "tiny-invariant";
 
 export async function fetchInputFile(
@@ -38,7 +38,7 @@ export async function fetchInputFile(
 	return input;
 }
 
-export async function runSolution<InputT = any>(
+export async function runSolution<InputT>(
 	fetchInputFile: () => Promise<string>,
 	parseInputFile: (input: string) => InputT,
 	part1: (parsedInput: InputT) => number,
@@ -93,7 +93,7 @@ export function trim(strs: TemplateStringsArray) {
 		.flatMap((s) =>
 			s
 				.trim()
-				.split(`\n`)
+				.split("\n")
 				.map((t) => t.trim()),
 		)
 		.join("\n");

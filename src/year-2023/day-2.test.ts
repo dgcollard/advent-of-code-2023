@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
-import { parseInputFile, part1, part2 } from "./day-2";
 import { trim } from "../util";
+import { parseInputFile, part1, part2 } from "./day-2";
 
 const games = {
 	1: [

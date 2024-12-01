@@ -10,7 +10,7 @@ export function parseInputFile(inputFile: string): Input {
 }
 
 const isDigit = (char: string) => "0123456789".includes(char);
-const isSymbol = (char: string) => !isDigit(char) && char != ".";
+const isSymbol = (char: string) => !isDigit(char) && char !== ".";
 
 export function part1(engineSchematic: Input): number {
 	const width = engineSchematic[0].length;
@@ -89,7 +89,7 @@ export function part2(engineSchematic: Input): number {
 			if (isDigit(engineSchematic[iy][ix])) {
 				currentNumber += engineSchematic[iy][ix];
 
-				[
+				for (const gear of [
 					`${ix - 1},${iy - 1}`,
 					`${ix},${iy - 1}`,
 					`${ix + 1},${iy - 1}`,
@@ -98,16 +98,14 @@ export function part2(engineSchematic: Input): number {
 					`${ix - 1},${iy + 1}`,
 					`${ix},${iy + 1}`,
 					`${ix + 1},${iy + 1}`,
-				]
-					.filter((position) => gearPositions.has(position))
-					.forEach((gear) => {
-						currentNumberAdjacentToGears.add(gear);
-					});
+				].filter((position) => gearPositions.has(position))) {
+					currentNumberAdjacentToGears.add(gear);
+				}
 			} else if (currentNumber) {
-				currentNumberAdjacentToGears.forEach((gear) => {
+				for (const gear of currentNumberAdjacentToGears) {
 					gearToAdjacentNumbers[gear] ||= [];
 					gearToAdjacentNumbers[gear].push(currentNumber);
-				});
+				}
 
 				currentNumber = "";
 				currentNumberAdjacentToGears = new Set();

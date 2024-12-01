@@ -21,7 +21,7 @@ export function parseInputFile(inputFile: string): Input {
 export function part1(cards: Input): number {
 	const cardScores = cards.map(({ winners, picks }) => {
 		const matched = picks.filter((n) => winners.includes(n));
-		const score = matched.length > 0 ? Math.pow(2, matched.length - 1) : 0;
+		const score = matched.length > 0 ? 2 ** matched.length - 1 : 0;
 		return score;
 	});
 

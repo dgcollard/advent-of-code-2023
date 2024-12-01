@@ -1,6 +1,4 @@
-import invariant from "tiny-invariant";
 import { fetchInputFile, product, runSolution, sum } from "../util";
-import { kMaxLength } from "buffer";
 
 export type Input = [number, number][];
 

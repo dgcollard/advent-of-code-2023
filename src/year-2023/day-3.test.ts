@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
-import { parseInputFile, part1, part2 } from "./day-3";
 import { trim } from "../util";
+import { parseInputFile, part1, part2 } from "./day-3";
 
 const engineSchematic = [
 	["4", "6", "7", ".", ".", "1", "1", "4", ".", ".", "."],

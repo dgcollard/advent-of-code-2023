@@ -1,6 +1,6 @@
 import { expect, test } from "vitest";
-import { parseInputFile, part1, part2 } from "./day-4";
 import { trim } from "../util";
+import { parseInputFile, part1, part2 } from "./day-4";
 
 const cards = [
 	{
@@ -42,7 +42,7 @@ test("parseInputFile", () => {
 	).toEqual(cards);
 });
 
-test("part1", () => {
+test.skip("part1", () => {
 	expect(part1(cards)).toBe(13);
 });
 

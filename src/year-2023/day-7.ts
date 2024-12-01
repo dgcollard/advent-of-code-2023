@@ -24,19 +24,23 @@ export function handType(hand: string): number {
 
 	if (eq(0, 1, 2, 3, 4)) {
 		return 0; // five of a kind
-	} else if (eq(0, 1, 2, 3) || eq(1, 2, 3, 4)) {
-		return 1; // four of a kind
-	} else if ((eq(0, 1, 2) && eq(3, 4)) || (eq(0, 1) && eq(2, 3, 4))) {
-		return 2; // full house
-	} else if (eq(0, 1, 2) || eq(1, 2, 3) || eq(2, 3, 4)) {
-		return 3; // three of a kind
-	} else if ((eq(0, 1) && (eq(2, 3) || eq(3, 4))) || (eq(1, 2) && eq(3, 4))) {
-		return 4; // two pair
-	} else if (eq(0, 1) || eq(1, 2) || eq(2, 3) || eq(3, 4)) {
-		return 5; // one pair
-	} else {
-		return 6; // high card
 	}
+	if (eq(0, 1, 2, 3) || eq(1, 2, 3, 4)) {
+		return 1; // four of a kind
+	}
+	if ((eq(0, 1, 2) && eq(3, 4)) || (eq(0, 1) && eq(2, 3, 4))) {
+		return 2; // full house
+	}
+	if (eq(0, 1, 2) || eq(1, 2, 3) || eq(2, 3, 4)) {
+		return 3; // three of a kind
+	}
+	if ((eq(0, 1) && (eq(2, 3) || eq(3, 4))) || (eq(1, 2) && eq(3, 4))) {
+		return 4; // two pair
+	}
+	if (eq(0, 1) || eq(1, 2) || eq(2, 3) || eq(3, 4)) {
+		return 5; // one pair
+	}
+	return 6; // high card
 }
 
 export function part1(hands: Input): number {
