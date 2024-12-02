@@ -1,4 +1,4 @@
-import { fetchInputFile, runSolution, sum } from "../util";
+import { fetchInputFile, pairs, runSolution, sum } from "../util";
 
 export type Input = number[][];
 
@@ -8,9 +8,6 @@ export function parseInputFile(inputFile: string): Input {
 		.split("\n")
 		.map((line) => line.split(" ").map(Number));
 }
-
-const pairs = <T>(arr: T[]): [T, T][] =>
-	arr.slice(0, -1).map((v, i) => [v, arr[i + 1]]);
 
 export function part1(histories: Input): number {
 	const extrapolatedValues = histories.map((history) => {
